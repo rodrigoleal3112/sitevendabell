@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Online</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Delícias da bell</h1>
+        <p>Doces e salgados</p>
+        <nav>
+            <ul>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#sobre">Sobre Nós</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="produtos">
+        <h2>Produtos</h2> <!-- Título acima das imagens -->
+        <div class="produto">
+            <img src="caixadoce.jpeg" alt="Produto 1" class="imagem-produto">
+            <h3>Produto 1</h3>
+            <p>Descrição do produto 1.</p>
+            <p>Preço: R$10.00</p>
+            <button onclick="adicionarAoCarrinho('Produto 1', 10)">Adicionar ao Carrinho</button>
+        </div>
+        <div class="produto">
+            <img src=""minipizza.jpeg"" alt="Produto 2" class="imagem-produto">
+            <h3>Produto 2</h3>
+            <p>Descrição do produto 2.</p>
+            <p>Preço: R$20.00</p>
+            <button onclick="adicionarAoCarrinho('Produto 2', 20)">Adicionar ao Carrinho</button>
+        </div>
+    </section>
+
+    <section id="sobre">
+        <h2>Sobre Nós</h2>
+        <p>Bem-vindo à nossa loja online!</p>
+    </section>
+
+    <section id="contato">
+        <h2>Contato</h2>
+        <p>Email: contato@lojasonline.com</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Loja Online</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+section {
+    padding: 20px;
+}
+
+#produtos {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os produtos se organizem em múltiplas linhas */
+    justify-content: left; /* Alinha os produtos à esquerda */
+}
+
+.produto {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 15px;
+    text-align: center; /* Centraliza o texto e os botões */
+    width: 200px; /* Define uma largura fixa para cada produto */
+    transition: transform 0.3s, box-shadow 0.3s; /* Animação suave ao passar o mouse */
+}
+
+.produto:hover {
+    transform: scale(1.05); /* Aumenta ligeiramente o tamanho do produto */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Adiciona sombra ao passar o mouse */
+}
+
+.imagem-produto {
+    max-width: 100%; /* Assegura que a imagem não ultrapasse a largura do produto */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #4CAF50;
+    color: white;
+}
+[11:27, 09/10/2024] Vinicius Fmp: let carrinho = [];
+
+function adicionarAoCarrinho(nome, preco) {
+    carrinho.push({ nome, preco });
+    alert(${nome} foi adicionado ao carrinho!);
+    console.log(carrinho);
+}
